@@ -2,6 +2,9 @@ const ROOT_URL =
   process.env.NEXT_PUBLIC_URL ||
   (process.env.VERCEL_PROJECT_PRODUCTION_URL ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}` : 'http://localhost:3000');
 
+// Ensure production URL is set correctly
+const PRODUCTION_URL = process.env.NEXT_PUBLIC_URL || 'https://challenge-fun-five.vercel.app';
+
 /**
  * MiniApp configuration object. Must follow the Farcaster MiniApp specification.
  *
@@ -31,6 +34,7 @@ export const minikitConfig = {
     ogTitle: "",
     ogDescription: "",
     ogImageUrl: `${ROOT_URL}/blue-hero.png`,
+    canonicalDomain: "challenge-fun-five.vercel.app",
   },
 } as const;
 
